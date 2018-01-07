@@ -1,0 +1,34 @@
+Sometimes it’s important for some classes to have exactly one instance. There are many objects we only need one instance
+of them and if we, instantiate more than one, we’ll run into all sorts of problems like incorrect program behavior, overuse of
+resources, or inconsistent results.
+
+The Singleton Pattern ensures that a class has only one instance, and provides a global point of access to it. However, although
+the Singleton is the simplest in terms of its class diagram because there is only one single class, its implementation is a bit trickier.
+
+there are multiple ways to implement a singleton design pattern: this list is a gradual approach to the ultimate enum approach.
+EAGER:
+  -the Eager way, in this case we declare a static instantiation, knowing that a static object is only created 
+  once unlike a non-static object.
+  -then we create a private constructor to disable any instantiation from outside the class, this allows us to only call the static object
+  when we need an object of the class.
+  
+Lazy: here we instantiate the static variable to a null, and only retrieve it after a null check.
+
+Mulithreaded: synchronize the getInstance() to ensure that it's threadsafe. 
+
+Lazy double check: check nullability before synchronizing the class, to ensure that synchronize is only called once. 
+
+serialized class: we make our class implement serializable and create methods to ensure that during deserialization multiple instances aren't created.
+
+keep in mind though we have a private constructor, by using reflection one can initialize this class. using the code below: 
+	Constructor constructor = singleton.getInstance().getClass().getDeclaredConstructor(new Class[0]);
+        constructor.setAccessible(true); // this makes the class instantiable in reflection allowing the below code:
+        
+        //created a new instance of the singleton class
+        Singleton singleton2 = (Singleton) constructor.newInstance();
+        
+
+Enum: Since enums are inherently serializable, we don't need to implement it with a serializable interface. The reflection 
+problem is also not there. Therefore, it is 100% guaranteed that only one instance of the singleton
+ is present within a JVM. Thus, this method is recommended as the best method of making singletons in Java.
+
