@@ -3,8 +3,8 @@ package com.java.design.bridge.pattern.abstracts;
 import com.java.design.bridge.pattern.interfaces.Product;
 
 /**
- * abstraction concrete implementer
- 
+ * abstraction concrete implementer, extended by each car type, contains abstract method that can be overriden by 
+ * each car type.  
  */
 public abstract class Car {
 
@@ -14,6 +14,7 @@ public abstract class Car {
 	*/
 	private final Product product;
 	
+	//defines the car type being created.
 	private final String carType;
 	
 	public Car(Product product,String carType){
@@ -24,6 +25,7 @@ public abstract class Car {
 	public abstract void assemble();
 	public abstract void produceProduct();
 	
+	// prints details of each car and their specific product name.
 	public void printDetails(){
 	System.out.println("Car: "+carType+", Product:"+product.productName());
 	}

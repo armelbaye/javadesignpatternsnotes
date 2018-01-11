@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  	the composite class which can have other objects below it, ie: the childrenTag. In this case the 
- 	our composite store List of other classes that extend the component.
+ 	our composite stores List of other classes that extend the component.
  	
  	defines behaviour for components having children.
 	stores child components.
@@ -23,36 +23,32 @@ public class HtmlParentElement extends HtmlTag {
 		this.tagName = tagName;
 		this.startTag = "";
 		this.endTag = "";
-		this.childrenTag = new ArrayList<>();
+		this.childrenTag = new ArrayList<>(); // en empty collection used to store children objects
 		}
 
 	@Override
 	public String getTagName() {
-		// TODO Auto-generated method stub
 		return tagName;
 	}
 
 	@Override
 	public void setStartTag(String tag) {
-		// TODO Auto-generated method stub
 		this.startTag = tag;
 
 	}
 
 	@Override
 	public void setEndTag(String tag) {
-		// TODO Auto-generated method stub
 		this.endTag = tag;
 	}
 	
     @Override
-    public void addChildTag(HtmlTag htmlTag){
+    public void addChildTag(HtmlTag htmlTag){  // can add a composite as it's childTag
     childrenTag.add(htmlTag);
     }
 
     @Override
-	public void removeChildTag(HtmlTag htmlTag) {
-		// TODO Auto-generated method stub
+	public void removeChildTag(HtmlTag htmlTag) { // can remove a composite that is a childTag
     	childrenTag.remove(htmlTag);
 	}
     
@@ -61,9 +57,12 @@ public class HtmlParentElement extends HtmlTag {
     return childrenTag;
     }
 
+    /*
+     * recursive method that is also present in the leaf, so depending on the object type, this 
+     * method gets called accordingly.
+	 */
 	@Override
 	public void generateHtml() {
-		// TODO Auto-generated method stub
 		System.out.println(startTag);
 		for(HtmlTag tag : childrenTag){
 		tag.generateHtml();

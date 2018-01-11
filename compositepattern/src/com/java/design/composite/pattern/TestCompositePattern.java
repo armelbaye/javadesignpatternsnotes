@@ -13,24 +13,24 @@ package com.java.design.composite.pattern;
 public class TestCompositePattern {
 
 	public static void main(String[] args) {
-		HtmlTag parentTag = new HtmlParentElement("<html>");
-		parentTag.setStartTag(parentTag.getTagName());
+		HtmlTag parentTag = new HtmlParentElement("<html>"); // composite
+		parentTag.setStartTag(parentTag.getTagName()); 
 		parentTag.setEndTag("</html>");
 		
-		HtmlTag childrenTag0 = new HtmlElement("<p>");
+		HtmlTag childrenTag0 = new HtmlElement("<p>"); // leaf or child of body
 		childrenTag0.setStartTag(childrenTag0.getTagName());
 		childrenTag0.setTagBody("Paragraph 1 is here");
 		childrenTag0.setEndTag("</p>");
 		
-		HtmlTag childrenTag1 = new HtmlElement("<p>");
+		HtmlTag childrenTag1 = new HtmlElement("<p>"); //leaf or child of body
 		childrenTag1.setStartTag(childrenTag1.getTagName());
 		childrenTag1.setTagBody("Paragraph 2 is here");
 		childrenTag1.setEndTag("</p>");
 		
-		HtmlTag bodyTag = new HtmlParentElement("<body>");
+		HtmlTag bodyTag = new HtmlParentElement("<body>"); //composite, 
 		bodyTag.setStartTag(bodyTag.getTagName());
-		bodyTag.addChildTag(childrenTag0);
-		bodyTag.addChildTag(childrenTag1);
+		bodyTag.addChildTag(childrenTag0); // adds children to the composite body
+		bodyTag.addChildTag(childrenTag1); // adds children to the composite body
 		bodyTag.setEndTag("</body>");
 		
 		parentTag.addChildTag(bodyTag);

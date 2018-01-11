@@ -3,9 +3,8 @@ package com.java.design.bridge.pattern;
 import com.java.design.bridge.pattern.interfaces.Product;
 
 /**
-
- concrete implementer
-
+ * concrete implementer, here this is the product for each car type.
+ * 
 */
 public class GearLocking implements Product {
 	
@@ -16,13 +15,11 @@ public class GearLocking implements Product {
 	}
 	@Override
 	public String productName() {
-		// TODO Auto-generated method stub
 		return productName;
 	}
 
 	@Override
 	public void produce() {
-		// TODO Auto-generated method stub
 		System.out.println("Producing Gear Locking System");
 	}
 

@@ -1,0 +1,13 @@
+The Composite Pattern allows us to build structures of objects in the form of trees that contains both composition of objects and
+individual objects as nodes. Using a composite structure, we can apply the same operations over both composites and individual
+objects. In other words, in most cases we can ignore the differences between compositions of objects and individual objects.
+The Composite Pattern has four participants:
+
+• Component
+• Leaf
+• Composite
+• Client
+
+all object extends the component, because afer all they are all components.  this design pattern is really good when trying to list 
+all components with their values depending on the category they fall under.  The add method in the Collections interface for the 
+java API uses this pattern.

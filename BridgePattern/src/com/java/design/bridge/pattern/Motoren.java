@@ -4,10 +4,8 @@ import com.java.design.bridge.pattern.abstracts.Car;
 import com.java.design.bridge.pattern.interfaces.Product;
 
 /**
-refined abstraction
-
-
-*/
+ * refined abstraction,  here this is a car company
+ */
 public class Motoren extends Car {
 	
 	private final Product product;

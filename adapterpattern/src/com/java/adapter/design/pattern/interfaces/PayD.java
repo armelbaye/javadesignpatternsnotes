@@ -1,5 +1,8 @@
 package com.java.adapter.design.pattern.interfaces;
 
+/**
+ * The new pay method that needs to be implemented as a new payment method
+ */
 public interface PayD {
 	
 	public String getCustCardNo();

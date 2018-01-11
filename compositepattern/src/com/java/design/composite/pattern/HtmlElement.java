@@ -24,19 +24,16 @@ public class HtmlElement extends HtmlTag {
 	
 	@Override
 	public String getTagName() {
-		// TODO Auto-generated method stub
 		return tagName;
 	}
 
 	@Override
 	public void setStartTag(String tag) {
-		// TODO Auto-generated method stub
 		this.startTag = tag;
 	}
 
 	@Override
 	public void setEndTag(String tag) {
-		// TODO Auto-generated method stub
 		this.endTag = tag;
 	}
 	
@@ -47,7 +44,6 @@ public class HtmlElement extends HtmlTag {
 
 	@Override
 	public void generateHtml() {
-		// TODO Auto-generated method stub
 		System.out.println(startTag+""+tagBody+""+endTag);
 	}
 

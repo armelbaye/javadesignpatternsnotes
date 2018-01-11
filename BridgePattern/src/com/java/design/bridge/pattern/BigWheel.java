@@ -4,9 +4,7 @@ import com.java.design.bridge.pattern.abstracts.Car;
 import com.java.design.bridge.pattern.interfaces.Product;
 
 /**
- refined abstraction
- 
- 
+ * refined abstraction, here this is a car company
  */
 public class BigWheel extends Car {
 
@@ -14,7 +12,7 @@ public class BigWheel extends Car {
 	private final String carType;
 	
 	public BigWheel(Product product, String carType) {
-		super(product, carType);
+		super(product, carType); //ensures that this object is constructed as a car.
 		this.product = product;
 		this.carType = carType;
 	}

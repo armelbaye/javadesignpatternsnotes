@@ -1,5 +1,9 @@
 package com.java.adapter.design.pattern.interfaces;
 
+/**
+ * The existing pay method
+ *
+ */
 public interface Xpay {
 	
 	public String getCreditCardNo();

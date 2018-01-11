@@ -1,0 +1,6 @@
+This design patter is great to use if you're looking to keep the codes as is but implement a new way of doing things without messing 
+with the old way, the adapter is basically the class that connects your new implementation to your old implementation.  This class stores 
+your original implementation, and constructs an adapter with it, in which it converts it's properties to the new object.  Therefore, everytime
+a new situation arises, you'll need to create an interface and an adapter that implements that interface and stores the original object.
+
+Look at this as a natural adapter, which is used to convert one object to another.

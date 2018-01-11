@@ -26,9 +26,14 @@ public class XpayToPayDAdapter implements PayD {
 	//constructs an adapter with the Xpay object 
 	public XpayToPayDAdapter(Xpay xpay){
 		this.xpay = xpay;
+		// method that converts the Xpay properties to PayD properties.
 		setProp();
 		}
 	
+	/*
+	 * this method sets the payD properties with the Xpay properties, hence this is where the adapter takes
+	 * place. 
+	 */
 	private void setProp() {
 		this.setCardOwnerName(this.xpay.getCustomerName());
 		this.setCustCardNo(this.xpay.getCreditCardNo());
@@ -39,61 +44,51 @@ public class XpayToPayDAdapter implements PayD {
 
 	@Override
 	public String getCustCardNo() {
-		// TODO Auto-generated method stub
 		return this.custCardNo;
 	}
 
 	@Override
 	public String getCardOwnerName() {
-		// TODO Auto-generated method stub
 		return this.cardOwnerName;
 	}
 
 	@Override
 	public String getCardExpMonthDate() {
-		// TODO Auto-generated method stub
 		return this.cardExpMonthDate;
 	}
 
 	@Override
 	public Integer getCVVNo() {
-		// TODO Auto-generated method stub
 		return this.cVVNo;
 	}
 
 	@Override
 	public Double getTotalAmount() {
-		// TODO Auto-generated method stub
 		return this.totalAmount;
 	}
 
 	@Override
 	public void setCustCardNo(String custCardNo) {
-		// TODO Auto-generated method stub
 		this.custCardNo = custCardNo;
 	}
 
 	@Override
 	public void setCardOwnerName(String cardOwnerName) {
-		// TODO Auto-generated method stub
 		this.cardOwnerName = cardOwnerName;
 	}
 
 	@Override
 	public void setCardExpMonthDate(String cardExpMonthDate) {
-		// TODO Auto-generated method stub
 		this.cardExpMonthDate = cardExpMonthDate;
 	}
 
 	@Override
 	public void setCVVNo(Integer cVVNo) {
-		// TODO Auto-generated method stub
 		this.cVVNo = cVVNo;
 	}
 
 	@Override
 	public void setTotalAmount(Double totalAmount) {
-		// TODO Auto-generated method stub
 		this.totalAmount = totalAmount;
 	}
 
