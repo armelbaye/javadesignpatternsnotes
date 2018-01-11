@@ -1,0 +1,26 @@
+"If we allow classes to contact each other directly, that is, by providing a reference, the design will become very tightly coupled
+and hard to maintain. It would become very difficult to change one class without affecting the other. Even worse, the relationship
+between the classes varies, according to the different wash programs, like different temperature for different type of clothes. So
+these classes won’t able to be reused. Even worse, in order to support all the wash programs we need to put control statements
+like if-else in the code which would make the code even more complex and difficult to maintain.
+To decouple these objects from each other we need a mediator, which will contact the object on behalf of the other object, hence
+providing loose coupling between them. The object only needs to know about the mediator, and perform"
+
+The Mediator Pattern defines an object that encapsulates how a set of objects interact.  Mediator promotes loose coupling by
+keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
+
+The Mediator design pattern should be your first choice any time you have a set of objects that are tightly coupled. If every one
+of a series of objects has to know the internal details of the other objects, and maintaining those relationships becomes a problem,
+think of the Mediator. Using a Mediator means the interaction code has to reside in only one place, and that makes it easier to
+maintain. Using a mediator can hide a more serious problem: If you have multiple objects that are too tightly coupled, your
+encapsulation may be faulty. It might be time to rethink how you’ve broken your program into objects.
+
+The classess which hold reference of the mediator are called colleagues. The major participants of the Mediator Pattern are:
+
+	• Mediator: Defines an interface for communicating with Colleague objects.
+	
+	• ConcreteMediator: Implements cooperative behavior by coordinating Colleague objects. It also knows and maintains its
+	colleagues.
+	
+	• Colleague Classes: Each Colleague class knows its Mediator object. Each colleague communicates with its mediator whenever
+	it would have otherwise communicated with another colleague.
